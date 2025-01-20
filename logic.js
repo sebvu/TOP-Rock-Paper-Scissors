@@ -23,7 +23,7 @@ function playGame(maxScore = 5) {
   // Move your playRound function and score variables so that they’re declared inside of the new playGame function
   function playRound(humanChoice, computerChoice) {
     // Increment the humanScore or computerScore variable based on the round winner.
-    let choicesMessage = `Player chose ${humanChoice} and Computer chose ${computerChoice}`;
+    let choicesMessage = `PLAYER CHOSE: ${humanChoice}\nCOMPUTER CHOSE: ${computerChoice}`;
     let winnerMessage = ``;
     if (humanChoice === computerChoice) {
       winnerMessage += `It's a tie!`;
@@ -39,7 +39,7 @@ function playGame(maxScore = 5) {
       winnerMessage += `Computer wins round!`;
     }
     if (humanScore < maxScore && computerScore < maxScore) {
-      alert(`${choicesMessage}. ${winnerMessage}\n\n${scoreMessage()}`);
+      alert(`${choicesMessage}\n${winnerMessage}\n\n${scoreMessage()}`);
     }
   }
 }
