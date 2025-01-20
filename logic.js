@@ -6,7 +6,8 @@ function playGame(maxScore = 5) {
   // Initialize those variables with the value of 0.
   let humanScore = 0,
     computerScore = 0;
-  let scoreMessage = () => `Human Score: ${humanScore} | Computer Score: ${computerScore} | MAX SCORE: ${maxScore}`;
+  let scoreMessage = () =>
+    `Human Score: ${humanScore} | Computer Score: ${computerScore} | MAX SCORE: ${maxScore}`;
 
   // Play until one of the players reaches 5 points.
   while (humanScore < maxScore && computerScore < maxScore)
@@ -105,11 +106,11 @@ class InvalidComputerChoice extends Error {
 while (true) {
   let maxScore = Number(
     prompt(
-      "Type in the max score to play for!\n\nIf the value is negative or not a number, then it will default to 5",
+      "Type in the max score to play for!\n\nIf the value is negative, zero, or not a number, then it will default to 5",
     ),
   );
 
-  if (isNaN(maxScore)) {
+  if (isNaN(maxScore) || maxScore <= 0) {
     playGame();
   } else {
     playGame(maxScore);
